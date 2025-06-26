@@ -71,13 +71,13 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
+        <DialogHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 -m-6 mb-6 p-6 rounded-t-lg">
           <div className="flex items-center justify-between">
-            <DialogTitle className="flex items-center gap-2">
+            <DialogTitle className="flex items-center gap-2 text-blue-800">
               <FileText className="h-5 w-5" />
               Client Details - {clientData.code}
             </DialogTitle>
-            <Button variant="ghost" size="sm" onClick={onClose}>
+            <Button variant="ghost" size="sm" onClick={onClose} className="text-blue-600 hover:bg-blue-100">
               <X className="h-4 w-4" />
             </Button>
           </div>
@@ -85,9 +85,9 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Client Information */}
-          <Card className="lg:col-span-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <Card className="lg:col-span-2 border-l-4 border-l-blue-500 shadow-md">
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-cyan-50">
+              <CardTitle className="flex items-center gap-2 text-blue-800">
                 <Phone className="h-4 w-4" />
                 Client Information
               </CardTitle>
@@ -95,58 +95,58 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="text-sm font-medium text-gray-500">Code/Name:</span>
-                  <p className="font-medium">{clientData.code} - {clientData.name}</p>
+                  <span className="text-sm font-medium text-blue-600">Code/Name:</span>
+                  <p className="font-medium text-gray-800">{clientData.code} - {clientData.name}</p>
                 </div>
                 <div>
-                  <span className="text-sm font-medium text-gray-500">File Number:</span>
-                  <p className="font-medium">{clientData.fileNum}</p>
+                  <span className="text-sm font-medium text-blue-600">File Number:</span>
+                  <p className="font-medium text-gray-800">{clientData.fileNum}</p>
                 </div>
                 <div>
-                  <span className="text-sm font-medium text-gray-500">Account Ref 1:</span>
-                  <p>{clientData.accountRef1}</p>
+                  <span className="text-sm font-medium text-blue-600">Account Ref 1:</span>
+                  <p className="text-gray-700">{clientData.accountRef1}</p>
                 </div>
                 <div>
-                  <span className="text-sm font-medium text-gray-500">Account Ref 2:</span>
-                  <p>{clientData.accountRef2}</p>
+                  <span className="text-sm font-medium text-blue-600">Account Ref 2:</span>
+                  <p className="text-gray-700">{clientData.accountRef2}</p>
                 </div>
               </div>
 
               <div className="border-t pt-4">
-                <h4 className="font-medium mb-2 flex items-center gap-2">
+                <h4 className="font-medium mb-2 flex items-center gap-2 text-green-700">
                   <MapPin className="h-4 w-4" />
                   Debtor Information
                 </h4>
                 <div className="space-y-2">
                   <div>
-                    <span className="text-sm font-medium text-gray-500">Name:</span>
-                    <p className="font-medium">{clientData.debtorName}</p>
+                    <span className="text-sm font-medium text-green-600">Name:</span>
+                    <p className="font-medium text-gray-800">{clientData.debtorName}</p>
                   </div>
                   <div>
-                    <span className="text-sm font-medium text-gray-500">Address:</span>
-                    <p>{clientData.address}</p>
+                    <span className="text-sm font-medium text-green-600">Address:</span>
+                    <p className="text-gray-700">{clientData.address}</p>
                   </div>
                   <div>
-                    <span className="text-sm font-medium text-gray-500">Mobile Phone:</span>
-                    <p>{clientData.mobile}</p>
+                    <span className="text-sm font-medium text-green-600">Mobile Phone:</span>
+                    <p className="text-gray-700">{clientData.mobile}</p>
                   </div>
                 </div>
               </div>
 
               <div className="border-t pt-4">
-                <h4 className="font-medium mb-2">Additional Information</h4>
+                <h4 className="font-medium mb-2 text-purple-700">Additional Information</h4>
                 <div>
-                  <span className="text-sm font-medium text-gray-500">Property Address:</span>
-                  <p>{clientData.address}</p>
+                  <span className="text-sm font-medium text-purple-600">Property Address:</span>
+                  <p className="text-gray-700">{clientData.address}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Debt Summary */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+          <Card className="border-l-4 border-l-emerald-500 shadow-md">
+            <CardHeader className="bg-gradient-to-r from-emerald-50 to-green-50">
+              <CardTitle className="flex items-center gap-2 text-emerald-800">
                 <DollarSign className="h-4 w-4" />
                 Debt Summary
               </CardTitle>
@@ -154,41 +154,41 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-sm text-gray-500">Original Debt:</span>
-                  <span className="font-medium">{clientData.originalDebt}</span>
+                  <span className="text-sm text-gray-600">Original Debt:</span>
+                  <span className="font-medium text-gray-800">{clientData.originalDebt}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-gray-500">Current Debt:</span>
+                  <span className="text-sm text-gray-600">Current Debt:</span>
                   <span className="font-medium text-red-600">{clientData.currentDebt}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-gray-500">Credits:</span>
+                  <span className="text-sm text-gray-600">Credits:</span>
                   <span className="font-medium text-green-600">$0.00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-gray-500">Costs:</span>
-                  <span className="font-medium">$0.00</span>
+                  <span className="text-sm text-gray-600">Costs:</span>
+                  <span className="font-medium text-gray-800">$0.00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-gray-500">Interest:</span>
-                  <span className="font-medium">-</span>
+                  <span className="text-sm text-gray-600">Interest:</span>
+                  <span className="font-medium text-gray-800">-</span>
                 </div>
                 <div className="flex justify-between border-t pt-2">
-                  <span className="text-sm text-gray-500">Total Paid:</span>
+                  <span className="text-sm text-gray-600">Total Paid:</span>
                   <span className="font-medium text-green-600">{clientData.totalPaid}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Outstanding:</span>
-                  <span className="font-bold text-lg">{clientData.outstanding}</span>
+                <div className="flex justify-between bg-emerald-50 p-2 rounded">
+                  <span className="font-medium text-emerald-700">Outstanding:</span>
+                  <span className="font-bold text-lg text-emerald-800">{clientData.outstanding}</span>
                 </div>
               </div>
 
               <div className="border-t pt-4">
-                <h4 className="font-medium mb-2">Debt Ageing</h4>
+                <h4 className="font-medium mb-2 text-indigo-700">Debt Ageing</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span>Current:</span>
-                    <span>-$681.18</span>
+                    <span className="text-red-600">-$681.18</span>
                   </div>
                   <div className="flex justify-between">
                     <span>30 Days:</span>
@@ -217,41 +217,71 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
         </div>
 
         {/* Details Section */}
-        <Card className="mt-6">
+        <Card className="mt-6 shadow-md">
           <CardContent className="p-0">
             <Tabs defaultValue="arrangement" className="w-full">
-              <TabsList className="grid w-full grid-cols-6">
-                <TabsTrigger value="arrangement">Arrangement</TabsTrigger>
-                <TabsTrigger value="history">History</TabsTrigger>
-                <TabsTrigger value="notes">Notes</TabsTrigger>
-                <TabsTrigger value="interest">Interest</TabsTrigger>
-                <TabsTrigger value="documents">Documents</TabsTrigger>
-                <TabsTrigger value="payments">Payments</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-6 bg-gray-50">
+                <TabsTrigger 
+                  value="arrangement" 
+                  className="data-[state=active]:bg-blue-500 data-[state=active]:text-white"
+                >
+                  Arrangement
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="history" 
+                  className="data-[state=active]:bg-green-500 data-[state=active]:text-white"
+                >
+                  History
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="notes" 
+                  className="data-[state=active]:bg-purple-500 data-[state=active]:text-white"
+                >
+                  Notes
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="interest" 
+                  className="data-[state=active]:bg-orange-500 data-[state=active]:text-white"
+                >
+                  Interest
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="documents" 
+                  className="data-[state=active]:bg-teal-500 data-[state=active]:text-white"
+                >
+                  Documents
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="payments" 
+                  className="data-[state=active]:bg-pink-500 data-[state=active]:text-white"
+                >
+                  Payments
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value="arrangement" className="p-6">
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div>
-                      <span className="text-sm font-medium text-gray-500">Arrangement Date:</span>
-                      <p className="font-medium">{clientData.arrangement.date}</p>
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <span className="text-sm font-medium text-blue-600">Arrangement Date:</span>
+                      <p className="font-medium text-blue-800">{clientData.arrangement.date}</p>
                     </div>
-                    <div>
-                      <span className="text-sm font-medium text-gray-500">Frequency:</span>
-                      <p className="font-medium">{clientData.arrangement.frequency}</p>
+                    <div className="bg-green-50 p-3 rounded-lg">
+                      <span className="text-sm font-medium text-green-600">Frequency:</span>
+                      <p className="font-medium text-green-800">{clientData.arrangement.frequency}</p>
                     </div>
-                    <div>
-                      <span className="text-sm font-medium text-gray-500">Next Instalment:</span>
-                      <p className="font-medium">{clientData.arrangement.nextInstalment}</p>
+                    <div className="bg-purple-50 p-3 rounded-lg">
+                      <span className="text-sm font-medium text-purple-600">Next Instalment:</span>
+                      <p className="font-medium text-purple-800">{clientData.arrangement.nextInstalment}</p>
                     </div>
-                    <div>
-                      <span className="text-sm font-medium text-gray-500">Arrears:</span>
-                      <p className="font-medium">{clientData.arrangement.arrears}</p>
+                    <div className="bg-orange-50 p-3 rounded-lg">
+                      <span className="text-sm font-medium text-orange-600">Arrears:</span>
+                      <p className="font-medium text-orange-800">{clientData.arrangement.arrears}</p>
                     </div>
                   </div>
                   
                   <div className="flex gap-2">
-                    <Button size="sm">Attach Files</Button>
+                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700">Attach Files</Button>
                     <input type="file" className="hidden" />
                   </div>
                 </div>
@@ -260,22 +290,22 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
               <TabsContent value="history" className="p-6">
                 <Table>
                   <TableHeader>
-                    <TableRow>
-                      <TableHead>Date</TableHead>
-                      <TableHead>Time</TableHead>
-                      <TableHead>Op</TableHead>
-                      <TableHead>Note</TableHead>
-                      <TableHead>Amount</TableHead>
+                    <TableRow className="bg-green-50">
+                      <TableHead className="font-semibold text-green-700">Date</TableHead>
+                      <TableHead className="font-semibold text-green-700">Time</TableHead>
+                      <TableHead className="font-semibold text-green-700">Op</TableHead>
+                      <TableHead className="font-semibold text-green-700">Note</TableHead>
+                      <TableHead className="font-semibold text-green-700">Amount</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {historyData.map((item, index) => (
-                      <TableRow key={index}>
-                        <TableCell>{item.date}</TableCell>
-                        <TableCell>{item.time}</TableCell>
-                        <TableCell>{item.operator}</TableCell>
-                        <TableCell className="max-w-xs">{item.note}</TableCell>
-                        <TableCell className="font-medium">{item.amount}</TableCell>
+                      <TableRow key={index} className="hover:bg-green-50">
+                        <TableCell className="text-gray-700">{item.date}</TableCell>
+                        <TableCell className="text-gray-700">{item.time}</TableCell>
+                        <TableCell className="font-medium text-green-700">{item.operator}</TableCell>
+                        <TableCell className="max-w-xs text-gray-700">{item.note}</TableCell>
+                        <TableCell className="font-medium text-green-600">{item.amount}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -283,19 +313,27 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
               </TabsContent>
 
               <TabsContent value="notes" className="p-6">
-                <p className="text-gray-600">Notes functionality would be implemented here.</p>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <p className="text-purple-700">Notes functionality would be implemented here.</p>
+                </div>
               </TabsContent>
 
               <TabsContent value="interest" className="p-6">
-                <p className="text-gray-600">Interest calculations would be displayed here.</p>
+                <div className="bg-orange-50 p-4 rounded-lg">
+                  <p className="text-orange-700">Interest calculations would be displayed here.</p>
+                </div>
               </TabsContent>
 
               <TabsContent value="documents" className="p-6">
-                <p className="text-gray-600">Document management would be implemented here.</p>
+                <div className="bg-teal-50 p-4 rounded-lg">
+                  <p className="text-teal-700">Document management would be implemented here.</p>
+                </div>
               </TabsContent>
 
               <TabsContent value="payments" className="p-6">
-                <p className="text-gray-600">Payment history and management would be implemented here.</p>
+                <div className="bg-pink-50 p-4 rounded-lg">
+                  <p className="text-pink-700">Payment history and management would be implemented here.</p>
+                </div>
               </TabsContent>
             </Tabs>
           </CardContent>
@@ -303,13 +341,13 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
 
         {/* Action Buttons */}
         <div className="flex justify-end gap-2 mt-6">
-          <Button variant="outline">Enter a Note</Button>
-          <Button variant="outline">View History</Button>
-          <Button variant="outline">Contact Operator</Button>
-          <Button variant="outline">Advise of Payment</Button>
-          <Button variant="outline">Print</Button>
-          <Button variant="outline">Export to Excel</Button>
-          <Button onClick={onClose}>Close</Button>
+          <Button variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50">Enter a Note</Button>
+          <Button variant="outline" className="border-green-300 text-green-700 hover:bg-green-50">View History</Button>
+          <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50">Contact Operator</Button>
+          <Button variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-50">Advise of Payment</Button>
+          <Button variant="outline" className="border-teal-300 text-teal-700 hover:bg-teal-50">Print</Button>
+          <Button variant="outline" className="border-pink-300 text-pink-700 hover:bg-pink-50">Export to Excel</Button>
+          <Button onClick={onClose} className="bg-gray-600 hover:bg-gray-700">Close</Button>
         </div>
       </DialogContent>
     </Dialog>
