@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -47,7 +46,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
       amount: ""
     },
     {
-      date: "10 Jun 2025", 
+      date: "10 Jun 2025",
       time: "11:08:51",
       operator: "NJ",
       note: "*** RECORD UPDATES APPLIED ****",
@@ -55,7 +54,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
     },
     {
       date: "10 Jun 2025",
-      time: "10:15:03", 
+      time: "10:15:03",
       operator: "NJ",
       note: "DEBT ADJUSTMENT",
       amount: "$460.77"
@@ -63,7 +62,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
     {
       date: "22 May 2025",
       time: "14:34:46",
-      operator: "NJ", 
+      operator: "NJ",
       note: "PAYMENT - DIRECT TO CLIENT ON 20 May 2025",
       amount: "$250.00"
     }
@@ -71,11 +70,11 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader className="bg-gray-50 -m-6 mb-6 p-6 rounded-t-lg border-b">
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto bg-white border-gray-200 text-gray-900">
+        <DialogHeader className="bg-gray-50 -m-6 mb-6 p-6 rounded-t-lg border-b border-gray-200">
           <div className="flex items-center justify-between">
             <DialogTitle className="flex items-center gap-2 text-gray-900">
-              <FileText className="h-5 w-5 text-blue-600" />
+              <FileText className="h-5 w-5 text-yellow-600" />
               Client Details - {clientData.code}
             </DialogTitle>
             <Button variant="ghost" size="sm" onClick={onClose} className="text-gray-600 hover:bg-gray-100 hover:text-gray-900">
@@ -86,10 +85,10 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Client Information */}
-          <Card className="lg:col-span-2 border-l-4 border-l-blue-600 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b">
+          <Card className="lg:col-span-2 border-l-4 border-l-yellow-500 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-200">
               <CardTitle className="flex items-center gap-2 text-gray-900">
-                <Phone className="h-4 w-4 text-blue-600" />
+                <Phone className="h-4 w-4 text-yellow-600" />
                 Client Information
               </CardTitle>
             </CardHeader>
@@ -113,11 +112,11 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
                 </div>
               </div>
 
-              <Separator />
+              <Separator className="bg-gray-200" />
 
               <div>
                 <h4 className="font-medium mb-4 flex items-center gap-2 text-gray-900">
-                  <MapPin className="h-4 w-4 text-blue-600" />
+                  <MapPin className="h-4 w-4 text-yellow-600" />
                   Debtor Information
                 </h4>
                 <div className="space-y-3">
@@ -136,7 +135,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
                 </div>
               </div>
 
-              <Separator />
+              <Separator className="bg-gray-200" />
 
               <div>
                 <h4 className="font-medium mb-3 text-gray-900">Additional Information</h4>
@@ -150,7 +149,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
 
           {/* Debt Summary */}
           <Card className="border-l-4 border-l-green-600 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b">
+            <CardHeader className="bg-gray-50 border-b border-gray-200">
               <CardTitle className="flex items-center gap-2 text-gray-900">
                 <DollarSign className="h-4 w-4 text-green-600" />
                 Debt Summary
@@ -179,7 +178,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
                   <span className="font-medium text-gray-700">-</span>
                 </div>
                 
-                <Separator />
+                <Separator className="bg-gray-200" />
                 
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Total Paid:</span>
@@ -191,7 +190,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
                 </div>
               </div>
 
-              <Separator />
+              <Separator className="bg-gray-200" />
 
               <div>
                 <h4 className="font-medium mb-4 text-gray-900">Debt Ageing</h4>
@@ -230,40 +229,40 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
         <Card className="mt-8 shadow-sm">
           <CardContent className="p-0">
             <Tabs defaultValue="arrangement" className="w-full">
-              <TabsList className="grid w-full grid-cols-6 bg-gray-50 rounded-none border-b">
+              <TabsList className="grid w-full grid-cols-6 bg-gray-50 rounded-none border-b border-gray-200">
                 <TabsTrigger 
                   value="arrangement" 
-                  className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:shadow-none rounded-none"
+                  className="data-[state=active]:bg-white data-[state=active]:text-yellow-800 data-[state=active]:border-b-2 data-[state=active]:border-yellow-500 data-[state=active]:shadow-none rounded-none text-gray-500"
                 >
                   Arrangement
                 </TabsTrigger>
                 <TabsTrigger 
                   value="history" 
-                  className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:shadow-none rounded-none"
+                  className="data-[state=active]:bg-white data-[state=active]:text-yellow-800 data-[state=active]:border-b-2 data-[state=active]:border-yellow-500 data-[state=active]:shadow-none rounded-none text-gray-500"
                 >
                   History
                 </TabsTrigger>
                 <TabsTrigger 
                   value="notes" 
-                  className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:shadow-none rounded-none"
+                  className="data-[state=active]:bg-white data-[state=active]:text-yellow-800 data-[state=active]:border-b-2 data-[state=active]:border-yellow-500 data-[state=active]:shadow-none rounded-none text-gray-500"
                 >
                   Notes
                 </TabsTrigger>
                 <TabsTrigger 
                   value="interest" 
-                  className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:shadow-none rounded-none"
+                  className="data-[state=active]:bg-white data-[state=active]:text-yellow-800 data-[state=active]:border-b-2 data-[state=active]:border-yellow-500 data-[state=active]:shadow-none rounded-none text-gray-500"
                 >
                   Interest
                 </TabsTrigger>
                 <TabsTrigger 
                   value="documents" 
-                  className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:shadow-none rounded-none"
+                  className="data-[state=active]:bg-white data-[state=active]:text-yellow-800 data-[state=active]:border-b-2 data-[state=active]:border-yellow-500 data-[state=active]:shadow-none rounded-none text-gray-500"
                 >
                   Documents
                 </TabsTrigger>
                 <TabsTrigger 
                   value="payments" 
-                  className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:shadow-none rounded-none"
+                  className="data-[state=active]:bg-white data-[state=active]:text-yellow-800 data-[state=active]:border-b-2 data-[state=active]:border-yellow-500 data-[state=active]:shadow-none rounded-none text-gray-500"
                 >
                   Payments
                 </TabsTrigger>
@@ -272,26 +271,26 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
               <TabsContent value="arrangement" className="p-6">
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-gray-50 p-4 rounded-lg border">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <span className="text-sm font-medium text-gray-600">Arrangement Date:</span>
                       <p className="font-medium text-gray-900">{clientData.arrangement.date}</p>
                     </div>
-                    <div className="bg-gray-50 p-4 rounded-lg border">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <span className="text-sm font-medium text-gray-600">Frequency:</span>
                       <p className="font-medium text-gray-900">{clientData.arrangement.frequency}</p>
                     </div>
-                    <div className="bg-gray-50 p-4 rounded-lg border">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <span className="text-sm font-medium text-gray-600">Next Instalment:</span>
                       <p className="font-medium text-gray-900">{clientData.arrangement.nextInstalment}</p>
                     </div>
-                    <div className="bg-gray-50 p-4 rounded-lg border">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <span className="text-sm font-medium text-gray-600">Arrears:</span>
                       <p className="font-medium text-gray-900">{clientData.arrangement.arrears}</p>
                     </div>
                   </div>
                   
                   <div className="flex gap-2">
-                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">Attach Files</Button>
+                    <Button size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold">Attach Files</Button>
                     <input type="file" className="hidden" />
                   </div>
                 </div>
@@ -300,7 +299,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
               <TabsContent value="history" className="p-6">
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-gray-50 hover:bg-gray-50">
+                    <TableRow className="bg-gray-50 hover:bg-gray-50 border-b-gray-200">
                       <TableHead className="font-semibold text-gray-900">Date</TableHead>
                       <TableHead className="font-semibold text-gray-900">Time</TableHead>
                       <TableHead className="font-semibold text-gray-900">Op</TableHead>
@@ -310,7 +309,7 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
                   </TableHeader>
                   <TableBody>
                     {historyData.map((item, index) => (
-                      <TableRow key={index} className="hover:bg-gray-50">
+                      <TableRow key={index} className="hover:bg-gray-50 border-b-gray-200">
                         <TableCell className="text-gray-700">{item.date}</TableCell>
                         <TableCell className="text-gray-700">{item.time}</TableCell>
                         <TableCell className="font-medium text-gray-900">{item.operator}</TableCell>
@@ -323,42 +322,42 @@ export const ClientDetailModal = ({ client, onClose }: ClientDetailModalProps) =
               </TabsContent>
 
               <TabsContent value="notes" className="p-6">
-                <div className="bg-gray-50 p-6 rounded-lg border">
-                  <p className="text-gray-600">Notes functionality would be implemented here.</p>
-                </div>
-              </TabsContent>
+                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                   <p className="text-gray-600">Notes functionality would be implemented here.</p>
+                 </div>
+               </TabsContent>
 
               <TabsContent value="interest" className="p-6">
-                <div className="bg-gray-50 p-6 rounded-lg border">
-                  <p className="text-gray-600">Interest calculations would be displayed here.</p>
-                </div>
-              </TabsContent>
+                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                   <p className="text-gray-600">Interest calculations would be displayed here.</p>
+                 </div>
+               </TabsContent>
 
               <TabsContent value="documents" className="p-6">
-                <div className="bg-gray-50 p-6 rounded-lg border">
-                  <p className="text-gray-600">Document management would be implemented here.</p>
-                </div>
-              </TabsContent>
+                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                   <p className="text-gray-600">Document management would be implemented here.</p>
+                 </div>
+               </TabsContent>
 
               <TabsContent value="payments" className="p-6">
-                <div className="bg-gray-50 p-6 rounded-lg border">
-                  <p className="text-gray-600">Payment history and management would be implemented here.</p>
-                </div>
-              </TabsContent>
+                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                   <p className="text-gray-600">Payment history and management would be implemented here.</p>
+                 </div>
+               </TabsContent>
             </Tabs>
           </CardContent>
         </Card>
 
         {/* Action Buttons */}
-        <Separator className="my-6" />
+        <Separator className="my-6 bg-gray-200" />
         <div className="flex justify-end gap-3">
-          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">Enter a Note</Button>
-          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">View History</Button>
-          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">Contact Operator</Button>
-          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">Advise of Payment</Button>
-          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">Print</Button>
-          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">Export to Excel</Button>
-          <Button onClick={onClose} className="bg-gray-600 hover:bg-gray-700 text-white">Close</Button>
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">Enter a Note</Button>
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">View History</Button>
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">Contact Operator</Button>
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">Advise of Payment</Button>
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">Print</Button>
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">Export to Excel</Button>
+          <Button onClick={onClose} className="bg-gray-800 hover:bg-gray-900 text-white">Close</Button>
         </div>
       </DialogContent>
     </Dialog>
